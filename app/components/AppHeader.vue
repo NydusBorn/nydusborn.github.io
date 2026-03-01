@@ -55,25 +55,27 @@ async function langSwitch() {
 </script>
 
 <template>
-  <div class="fixed top-2 sm:top-4 mx-auto transform left-2 z-10">
-    <ULocaleSelect
-      v-model="locale"
-      :locales="locales"
-      style="width: 150px;"
-      @change="langSwitch"
-    />
-  </div>
-  <div class="fixed top-2 sm:top-4 mx-auto left-1/2 transform -translate-x-1/2 z-10">
-    <USelectMenu
-      v-model="page"
-      :items="pages"
-      style="width: 200px;"
-      :placeholder="placeholder"
-      @change="transportTo"
-    />
-  </div>
-  <div class="fixed top-2 sm:top-4 mx-auto transform right-2 z-10">
-    <ColorModeButton />
+  <div class="flex flex-col gap-2" style="margin-top: 8px">
+    <div class="sm:fixed sm:top-2 mx-auto transform sm:left-2 z-10">
+      <ULocaleSelect
+        v-model="locale"
+        :locales="locales"
+        style="width: 150px;"
+        @change="langSwitch"
+      />
+    </div>
+    <div class="sm:fixed sm:top-2 mx-auto sm:left-1/2 sm:transform sm:-translate-x-1/2 z-10">
+      <USelectMenu
+        v-model="page"
+        :items="pages"
+        style="width: 200px;"
+        :placeholder="placeholder"
+        @change="transportTo"
+      />
+    </div>
+    <div class="sm:fixed sm:top-2 mx-auto transform sm:right-2 z-10">
+      <ColorModeButton/>
+    </div>
   </div>
 </template>
 

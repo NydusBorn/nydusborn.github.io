@@ -49,7 +49,7 @@ const {data: shortSkills,} = await useAsyncData(`skills-${locale.value}`, async 
 
     <UCard class="bg-muted">
       <div class="flex flex-col md:flex-row gap-12 justify-center items-center">
-        <AvatarShape/>
+        <AvatarShape :size="useMediaQuery('width >= 350px').value ? 350 : useMediaQuery('width').value" />
 
         <div class="flex flex-col items-center md:items-start text-center md:text-left">
           <prose-h1>{{ $t('Site-Title') }}</prose-h1>
