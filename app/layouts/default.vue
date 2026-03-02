@@ -39,7 +39,7 @@
         </template>
 
         <template #right>
-          <ULink to="https://github.com/nydusborn/home">{{ $t("Link-Source") }}</ULink>
+          <ULink to="https://github.com/NydusBorn/nydusborn.github.io">{{ $t("Link-Source") }}</ULink>
         </template>
       </UFooter>
     </UContainer>
