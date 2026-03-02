@@ -22,7 +22,7 @@ export default {
   'Index-University': 'Tver State Technical University, Tver, Russia',
   'Index-Bachelors': 'Bachelor\'s degree, Software Engineering',
   'Index-Masters': 'Master\'s degree, Software Engineering',
-  'Index-DKC-Date': 'June 1 2024 - July 31 2025',
+  'Index-DKC-Date': 'June 2024 - July 2025',
   'Index-DKC-Title': 'DKC, Software Developer',
   'Index-DKC-Description': 'Backend, Frontend, DevOps, ML.',
   // Document Page

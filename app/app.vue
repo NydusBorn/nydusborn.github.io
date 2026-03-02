@@ -32,7 +32,7 @@ const {locales, setLocale} = useI18n()
 
 if (lang != '' && locales.value.map((x) => x.code).includes(lang)) {
   await setLocale(lang)
-  await router.push(route.Path)
+  await router.replace(route.Path)
   reloadNuxtApp({
     force: true
   })

@@ -22,7 +22,7 @@ export default {
   'Index-University': 'Тверской Государственный Технический Университет, Тверь, Россия',
   'Index-Bachelors': 'Бакалавр, Программная Инженерия',
   'Index-Masters': 'Магистр, Программная Инженерия',
-  'Index-DKC-Date': '1 Июня 2024 - 31 Июля 2025',
+  'Index-DKC-Date': 'Июнь 2024 - Июль 2025',
   'Index-DKC-Title': 'ДКС, Разработчик',
   'Index-DKC-Description': 'Backend, Frontend, DevOps, ML.',
   // Document Page
