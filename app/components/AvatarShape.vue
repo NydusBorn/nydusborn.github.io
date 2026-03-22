@@ -1,7 +1,24 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-import { avatarDefaults } from '~/components/avatarDefaults'
+<script lang="ts">
+import { computed, ref } from 'vue'
 
+export const avatarDefaults = {
+  petals: 12,
+  foregroundColor: 'black',
+  backgroundColor: '#f0f0f0',
+  rounding: 4,
+  size: 350,
+  petalThickness: 0.75,
+  gearBaseThickness: 15,
+  petalLength: 25,
+  eyeWidth: 90,
+  eyeHeight: 50,
+  strokeWidth: 6,
+  spinning: true,
+  isCircular: true
+}
+</script>
+
+<script setup lang="ts">
 defineComponent({
   name: 'AvatarShape'
 })

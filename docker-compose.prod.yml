@@ -1,0 +1,26 @@
+services:
+  prod-server:
+    build: .
+    ports:
+      - "3056:3000"
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: >
+      sh -c "npm run build && npm run preview"
+
+  static-server:
+    build: .
+    ports:
+      - "3057:3000"
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: >
+      sh -c "npm run generate && npm run preview"

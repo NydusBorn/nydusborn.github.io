@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { AvatarShape } from '#components'
-import { avatarDefaults } from '~/components/avatarDefaults'
+import { ref } from 'vue'
+import {avatarDefaults} from '~/components/AvatarShape.vue'
+import type { AvatarShape } from '#components'
 
 const avatarProps = ref({ ...avatarDefaults })
 const avatarRef = ref<InstanceType<typeof AvatarShape> | null>(null)
