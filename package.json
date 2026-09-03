@@ -13,6 +13,8 @@
   "dependencies": {
     "@iconify-json/lucide": "^1.2.121",
     "@iconify-json/simple-icons": "^1.2.93",
+    "@iconify-json/iconoir": "latest",
+    "@iconify-json/arcticons": "latest",
     "@nuxt/ui": "^4.10.0",
     "nuxt": "^4.5.2",
     "tailwindcss": "^4.3.3"
