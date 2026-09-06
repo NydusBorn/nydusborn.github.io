@@ -22,22 +22,33 @@ const performScreenshot = () => {
     ? svgData
     : svgData.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"')
   const svgBlob = new Blob([svgWithXmlns], { type: 'image/svg+xml;charset=utf-8' })
-  const url = URL.createObjectURL(svgBlob)
 
+  const filename = `avatar-${Date.now()}`
+
+  // Download SVG
+  const svgUrl = URL.createObjectURL(svgBlob)
+  const svgLink = document.createElement('a')
+  svgLink.href = svgUrl
+  svgLink.download = `${filename}.svg`
+  document.body.appendChild(svgLink)
+  svgLink.click()
+  document.body.removeChild(svgLink)
+  URL.revokeObjectURL(svgUrl)
+
+  // Download PNG
   const img = new Image()
   img.crossOrigin = 'anonymous'
   img.onload = () => {
     ctx.drawImage(img, 0, 0, size, size)
-    URL.revokeObjectURL(url)
     const pngUrl = canvas.toDataURL('image/png')
     const downloadLink = document.createElement('a')
     downloadLink.href = pngUrl
-    downloadLink.download = `avatar-${Date.now()}.png`
+    downloadLink.download = `${filename}.png`
     document.body.appendChild(downloadLink)
     downloadLink.click()
     document.body.removeChild(downloadLink)
   }
-  img.src = url
+  img.src = URL.createObjectURL(svgBlob)
 }
 </script>
 

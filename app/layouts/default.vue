@@ -1,23 +1,29 @@
 <script setup lang="ts">
-const mapping = {
-  "/en_resume.pdf": "Resume (EN)",
-  "/ru_resume.pdf": "Resume (RU)",
-};
-
-if (import.meta.dev) {
-  mapping["/stories/avatar"] = "Stories/Avatar";
+interface MenuItem {
+  label: string;
+  href?: string;
+  push?: string;
 }
 
-const reverseMapping = Object.fromEntries(
-  Object.entries(mapping).map(([k, v]) => [v, k]),
-);
-const pages = computed(() => Object.entries(mapping).map(([k, v]) => v));
-const page = ref();
+const items = ref<MenuItem[]>([
+  { label: "Resume (EN)", href: "/en_resume.pdf" },
+  { label: "Resume (RU)", href: "/ru_resume.pdf" },
+]);
 
-function transportTo() {
-  useRouter().push(reverseMapping[page.value]).then(() => {
-    window.location.reload();
-  });
+if (import.meta.dev) {
+  items.value.push({ label: "Stories/Avatar", push: "/stories/avatar" });
+}
+
+const selected = ref<MenuItem | null>(null);
+
+function onMenuChange(item: MenuItem | null) {
+  selected.value = null
+  if (item.href) {
+    window.location.href = item.href;
+  }
+  else {
+    useRouter().push(item.push)
+  }
 }
 </script>
 
@@ -25,11 +31,11 @@ function transportTo() {
   <UHeader>
     <template #left>
       <USelectMenu
-        v-model="page"
-        :items="pages"
+        v-model="selected"
+        :items="items"
         style="width: 150px"
         placeholder="Printed Resume"
-        @change="transportTo"
+        @update:modelValue="onMenuChange"
       />
     </template>
     <template #right>
