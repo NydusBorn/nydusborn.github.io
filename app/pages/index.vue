@@ -26,15 +26,9 @@
         size="xl"
         to="https://t.me/nydusborn"
       />
-      <UButton
-        variant="ghost"
-        icon="i-iconoir-mail"
-        size="xl"
-        to="mailto:nydusborn@outlook.com"
-      />
     </div>
 
-      <!-- <ULink>Blog</ULink>
+    <!-- <ULink>Blog</ULink>
     <ULink>Projects</ULink>   -->
   </div>
 </template>
