@@ -2,14 +2,7 @@
 </script>
 
 <template>
-  <UHeader>
-    <template #left>
-      <UIcon name="i-lucide-house" />
-    </template>
-    <template #right>
-      <UColorModeButton />
-    </template>
-  </UHeader>
+  <AppHeader />
   <UMain>
     <UContainer>
       <slot />
